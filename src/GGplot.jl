@@ -7,7 +7,7 @@ using TMI
 # Write your package code here.
 export planview, planviewplot,
     section, sectionplot,
-    plotextent, tracerinit,
+    plotextent, tracerinit
 
 #Python packages - initialize them to null globally
 #const patch = PyNULL()
@@ -52,14 +52,14 @@ function plotextent(latbox, lonbox)
 
     #init GeoAxes
     fig = figure()
-    ax = fig.add_subplot(projection = TMI.cartopy.crs.PlateCarree())
+    ax = fig.add_subplot(projection = GGplot.cartopy.crs.PlateCarree())
 
     #plot rectangle
-    ax.add_patch(TMI.mpl.patches.Rectangle(xy=lower_left,
+    ax.add_patch(GGplot.mpl.patches.Rectangle(xy=lower_left,
                                  width=w, height=h,
                                  facecolor="blue",
                                  alpha=0.2,
-                                 transform=TMI.cartopy.crs.PlateCarree()))
+                                 transform=GGplot.cartopy.crs.PlateCarree()))
     #define extent of figure
     pad = 10 #how many deg lat and lon to show outside of bbox
     pad_add = [-pad, pad] #add this to latbox and lonbox
