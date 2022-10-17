@@ -3,6 +3,11 @@ uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
 authors = ["G Jake Gebbie <ggebbie@whoi.edu>"]
 version = "0.1.0"
 
+[deps]
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+TMI = "582500f6-28c8-4d8f-aabe-b197735ec1d4"
+
 [compat]
 julia = "1.8"
 
