@@ -11,6 +11,7 @@ PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
 TMI = "582500f6-28c8-4d8f-aabe-b197735ec1d4"
 
 [compat]
+PyCall = "1"
 julia = "1.8"
 
 [extras]
