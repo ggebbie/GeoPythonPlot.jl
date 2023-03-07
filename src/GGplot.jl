@@ -88,7 +88,7 @@ end
 - `lims`: contour levels
 - `titlelabel`: optional title labeln
 """
-function sectionplot(field::Field{T}, lon, lims;titlelabel="section plot") where T <: Real
+function sectionplot(field::Field{<:Real}, lon, lims;titlelabel="section plot",fname="figure.png") 
 
     Psection = section(field,lon)
     cmap_seismic = get_cmap("seismic")
@@ -105,14 +105,14 @@ function sectionplot(field::Field{T}, lon, lims;titlelabel="section plot") where
     gca().set_title(titlelabel)
     gca().invert_yaxis()
     colorbar(orientation="horizontal")
-    
+    savefig(fname)
 end
 
 
 """
     function planviewplotcartopy: from NobleGasRelic
 """
-function planviewplotcartopy(c::Field{T}, depth, lims;titlelabel="section plot") where T <: Real
+function planviewplotcartopy(c::Field{<:Real}, depth, lims;titlelabel="planview plot",fname="fname.png",cenlon=-160.0) #where T <: Real
 
     cmap_seismic = get_cmap("seismic")
     #cmap_hot = get_cmap("hot_r")
@@ -121,7 +121,7 @@ function planviewplotcartopy(c::Field{T}, depth, lims;titlelabel="section plot")
 
     fig = figure(202)
     clf()
-    cenlon = -160.0
+    #cenlon = -160.0
     proj0 = cartopy.crs.PlateCarree()
     proj = cartopy.crs.PlateCarree(central_longitude=cenlon)
     ax = fig.add_subplot(projection = proj)
@@ -129,9 +129,9 @@ function planviewplotcartopy(c::Field{T}, depth, lims;titlelabel="section plot")
     #ax.coastlines()
     ax.add_feature(cartopy.feature.LAND, zorder=0, edgecolor="black", facecolor="black")
     
-    outdir = plotsdir()
-    !isdir(outdir) && mkpath(outdir) 
-    outfname = plotsdir("vintage.png")
+    #outdir = plotsdir()
+    #!isdir(outdir) && mkpath(outdir) 
+    #outfname = plotsdir("vintage.png")
     xlbl = "longitude "*L"[\degree E]"
     ylbl = "latitude "*L"[\degree N]"
     ax.set_title(titlelabel)
@@ -146,8 +146,7 @@ function planviewplotcartopy(c::Field{T}, depth, lims;titlelabel="section plot")
     colorbar(test,label="[%]",orientation="vertical",ticks=lims, fraction = 0.03)
     CS = ax.contour(c.γ.lon,c.γ.lat, cplan', lims, colors="k", transform = proj0)
     ax.clabel(CS, CS.levels, inline=true, fontsize=10)
-
-    savefig(outfname)
+    savefig(fname)
 
 end
 
