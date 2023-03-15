@@ -2,7 +2,7 @@
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "e04e0f77cccf1190614ff4afdeacafc4ecd6bed1"
+project_hash = "35113647f53fef95729339d404510ca87dd776cc"
 
 [[deps.ANSIColoredPrinters]]
 git-tree-sha1 = "574baf8110975760d391c710b6341da1afa48d8c"
@@ -255,7 +255,7 @@ deps = ["Random"]
 uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
 
 [[deps.GGplot]]
-deps = ["Conda", "GoogleDrive", "HTTP", "Pkg", "PyCall", "PyPlot", "TMI"]
+deps = ["Conda", "DelimitedFiles", "GoogleDrive", "HTTP", "Pkg", "PyCall", "PyPlot", "TMI"]
 path = ".."
 uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
 version = "0.1.0"
