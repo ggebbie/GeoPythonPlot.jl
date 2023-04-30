@@ -14,7 +14,7 @@ const patch = pyimport("matplotlib.patches") #PyNULL()
 
 # following example at ClimatePlots.jl
 const pyplot = pyimport("matplotlib.pyplot") #PyNULL()
-#const cmocean = pyimport("cmocean") #PyNULL()
+const cmocean = pyimport("cmocean") #PyNULL()
 const cartopy = pyimport("cartopy") #PyNULL()
 const ccrs = pyimport("cartopy.crs") #PyNULL()
 const mpl = pyimport("matplotlib") #PyNULL()
