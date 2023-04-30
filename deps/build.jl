@@ -1,12 +1,12 @@
-using Pkg, Conda
+using Pkg #, Conda
 
 if lowercase(get(ENV, "CI", "false")) == "true"    
 
     ENV["PYTHON"] = ""
-    Pkg.build("PyCall")
+    Pkg.build("PythonCall")
 
-    Conda.add("matplotlib",channel="conda-forge")
-    Conda.add("shapely",channel="conda-forge")
-    Conda.add("cartopy",channel="conda-forge")
+    CondaPkg.add("matplotlib",channel="conda-forge")
+    #Conda.add("shapely",channel="conda-forge")
+    CondaPkg.add("cartopy",channel="conda-forge")
 
 end
