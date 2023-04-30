@@ -1,4 +1,5 @@
-using Pkg #, Conda
+using Pkg
+using CondaPkg #, Conda
 
 if lowercase(get(ENV, "CI", "false")) == "true"    
 
