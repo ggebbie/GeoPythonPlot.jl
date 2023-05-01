@@ -7,24 +7,26 @@
 
 # Description
 
-G. Gebbie's plotting routines, not to be confused with `ggplot2`. These plotting functions come from `TMI.jl`.  
+G. Gebbie's plotting routines, not to be confused with `ggplot2`. These plotting functions mostly originate from `TMI.jl`.  
 
 # Requirements
 
-GGplot.jl uses matplotlib and cartopy. Direct the python environment to an existing system-wide version of python with these already installed:
+GGplot.jl uses matplotlib, cmocean, and cartopy. Direct the python environment to an existing system-wide version of python with these already installed:
 `ENV["PYTHON"]="python/directory/on/your/machine"`
 
-Or use a Julia-specific python environment built from scratch following these directions from the Julia REPL:
-`ENV["PYTHON"]=""` \
-`import Pkg; Pkg.add("PyCall")`\
-`import Pkg; Pkg.build("PyCall")`
-
-Restart the REPL.\
-`import Pkg; Pkg.add("Conda")`\
-`import Conda`\
-`Conda.add("matplotlib",channel="conda-forge")`\
-`Conda.add("shapely",channel="conda-forge")`\
-`Conda.add("cartopy",channel="conda-forge")`
+Or use a Julia-specific python environment built from scratch following the directions from `deps/build.jl`. Or, at the Julia REPL, run:
+```julia
+using Pkg
+using CondaPkg
+Pkg.add("PythonCall")
+Pkg.add("PythonPlot")
+ENV["PYTHON"]="" 
+import Pkg; Pkg.build("PythonCall")
+Pkg.build("PythonCall")	
+CondaPkg.add("matplotlib")
+CondaPkg.add("cartopy")
+CondaPkg.add("cmocean")
+```
 
 # How this Julia package was started
 
