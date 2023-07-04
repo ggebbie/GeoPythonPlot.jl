@@ -12,6 +12,6 @@ pyversion = pyconvert(String, pyimport("sys").version)
 
     # will this plot run?
     latbox = [50,60]; lonbox = [30,40]
-    plotextent(latbox,lonbox)
+    plotbox(latbox,lonbox)
 
 end

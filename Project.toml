@@ -1,7 +1,7 @@
 name = "GGplot"
 uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
 authors = ["G Jake Gebbie <ggebbie@whoi.edu>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"

@@ -7,7 +7,7 @@ using TMI
 # Write your package code here.
 export planview, planviewplot,
     section, sectionplot,
-    plotextent, tracerinit
+    plotbox, tracerinit
 
 #Python packages - initialize them to null globally
 const patch = pyimport("matplotlib.patches") #PyNULL()
@@ -46,14 +46,14 @@ const mpl = pyimport("matplotlib") #PyNULL()
  end
 
 """
-    function plotextent
+    function plotbox
     Generate image showing user-specified ROI
 # Arguments
 - `latbox`: in format [lat_start, lat_stop]
 - `lonbox`: in format [lon_start, lon_stop]
 
 """
-function plotextent(latbox, lonbox)
+function plotbox(latbox, lonbox)
     
 #    ccrs = pyimport("cartopy.crs")
     lower_left = [minimum(lonbox), minimum(latbox)] #array of lower left of box
@@ -120,11 +120,12 @@ function sectionplot(field::Field{<:Real}, lon, lims;titlelabel="section plot",f
     savefig(fname)
 end
 
+"""
+    function planviewplot: from NobleGasRelic
 
+    formerly planviewplotcartopy
 """
-    function planviewplotcartopy: from NobleGasRelic
-"""
-function planviewplotcartopy(c::Field{<:Real}, depth, lims;titlelabel="planview plot",fname="fname.png",cenlon=-160.0) #where T <: Real
+function planviewplot(c::Field{<:Real}, depth, lims;titlelabel="planview plot",fname="fname.png",cenlon=-160.0) #where T <: Real
 
     cmap_seismic = get_cmap("seismic")
     #cmap_hot = get_cmap("hot_r")
@@ -154,41 +155,40 @@ function planviewplotcartopy(c::Field{<:Real}, depth, lims;titlelabel="planview 
     gl.right_labels = false
 
     test = ax.contourf(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_hot, transform = proj0)
-
-    colorbar(test,label="[%]",orientation="vertical",ticks=lims, fraction = 0.03)
+    colorbar(test,label=c.units,orientation="vertical",ticks=lims, fraction = 0.03)
     CS = ax.contour(c.γ.lon,c.γ.lat, cplan', lims, colors="k", transform = proj0)
     ax.clabel(CS, CS.levels, inline=true, fontsize=10)
     savefig(fname)
 
 end
 
-"""
-    function planviewplot
-    Plot of plan view (lon-lat) in ocean
-# Arguments
-- `field::Field`, 3d filed of values to be plotted
-- `depth`: depth of plan view
-- `lims`: contour levels
-- `titlelabel`: optional title label
-"""
-function planviewplot(c::Field{T}, depth, lims;titlelabel="section plot") where T <: Real
+# """
+#     function planviewplot
+#     Plot of plan view (lon-lat) in ocean
+# # Arguments
+# - `field::Field`, 3d filed of values to be plotted
+# - `depth`: depth of plan view
+# - `lims`: contour levels
+# - `titlelabel`: optional title label
+# """
+# function planviewplot(c::Field{T}, depth, lims;titlelabel="planview plot") where T <: Real
 
-    cplan = planview(c::Field{T},depth)
+#     cplan = planview(c::Field{T},depth)
 
-    cmap_seismic = get_cmap("seismic")
+#     cmap_seismic = get_cmap("seismic")
     
-    #calc fignum - based on current number of figures
-    figure()
-    contourf(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_seismic)
-    #fig, ax = plt.subplots()
-    CS = gca().contour(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_seismic)
-    gca().clabel(CS, CS.levels, inline=true, fontsize=10)
-    ylabel("Latitude [°N]")
-    xlabel("Longitude [°E]")
-    gca().set_title(titlelabel)
-    colorbar(orientation="vertical")
+#     #calc fignum - based on current number of figures
+#     figure()
+#     contourf(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_seismic)
+#     #fig, ax = plt.subplots()
+#     CS = gca().contour(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_seismic)
+#     gca().clabel(CS, CS.levels, inline=true, fontsize=10)
+#     ylabel("Latitude [°N]")
+#     xlabel("Longitude [°E]")
+#     gca().set_title(titlelabel)
+#     colorbar(orientation="vertical")
     
-end
+# end
 
 """
     function planviewplot
