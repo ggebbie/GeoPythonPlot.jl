@@ -108,15 +108,16 @@ function sectionplot(field::Field{<:Real}, lon, lims;titlelabel="section plot",f
     
     #calc fignum - based on current number of figures
     figure()
+    #cmap_seismic.set_bad(color="black") # doesn't work
     contourf(field.γ.lat, z, Psection', lims, cmap=cmap_seismic)
-    #fig, ax = plt.subplots()
+    colorbar(orientation="horizontal")
     CS = gca().contour(field.γ.lat, z, Psection', lims,colors="k")
     gca().clabel(CS, CS.levels, inline=true, fontsize=10)
     xlabel("Latitude [°N]")
     ylabel("Depth [km]")
     gca().set_title(titlelabel)
     gca().invert_yaxis()
-    colorbar(orientation="horizontal")
+    gca().set_facecolor("black")
     savefig(fname)
 end
 
