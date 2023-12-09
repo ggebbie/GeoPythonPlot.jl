@@ -1,4 +1,4 @@
-using GGplot
+using GeoPythonPlot
 using PythonCall
 using PythonPlot
 using TMI
@@ -15,7 +15,7 @@ A, Alu, γ, TMIfile, L, B = config_from_nc(TMIversion,compute_lu = false);
 # set them as surface boundary condition
 testfield = readfield(TMIfile,"PO₄",γ)
 
-@testset "GGplot.jl" begin
+@testset "GeoPythonPlot.jl" begin
 
     # Write your tests here.
     @testset "box" begin
@@ -32,7 +32,7 @@ testfield = readfield(TMIfile,"PO₄",γ)
         depth = γ.depth[level]
         label = testfield.longname*", depth = "*string(depth)*" m"
 
-        #GGplot.pygui(true) # to help plots appear on screen using Python GUI
+        #GeoPythonPlot.pygui(true) # to help plots appear on screen using Python GUI
         planviewplot(testfield, depth, cntrs, titlelabel=label)
 
     end

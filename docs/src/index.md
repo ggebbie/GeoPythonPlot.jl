@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = GGplot
+CurrentModule = GeoPythonPlot
 ```
 
-# GGplot
+# GeoPythonPlot
 
-Documentation for [GGplot](https://github.com/ggebbie/GGplot.jl).
+Documentation for [GeoPythonPlot](https://github.com/ggebbie/GeoPythonPlot.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [GGplot]
+Modules = [GeoPythonPlot]
 ```

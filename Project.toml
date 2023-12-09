@@ -1,4 +1,4 @@
-name = "GGplot"
+name = "GeoPythonPlot"
 uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
 authors = ["G Jake Gebbie <ggebbie@whoi.edu>"]
 version = "0.1.1"

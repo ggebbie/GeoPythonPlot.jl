@@ -1,16 +1,16 @@
-using GGplot
+using GeoPythonPlot
 using Documenter
 
-DocMeta.setdocmeta!(GGplot, :DocTestSetup, :(using GGplot); recursive=true)
+DocMeta.setdocmeta!(GeoPythonPlot, :DocTestSetup, :(using GeoPythonPlot); recursive=true)
 
 makedocs(;
-    modules=[GGplot],
+    modules=[GeoPythonPlot],
     authors="G Jake Gebbie <ggebbie@whoi.edu>",
-    repo="https://github.com/ggebbie/GGplot.jl/blob/{commit}{path}#{line}",
-    sitename="GGplot.jl",
+    repo="https://github.com/ggebbie/GeoPythonPlot.jl/blob/{commit}{path}#{line}",
+    sitename="GeoPythonPlot.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://ggebbie.github.io/GGplot.jl",
+        canonical="https://ggebbie.github.io/GeoPythonPlot.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/ggebbie/GGplot.jl",
+    repo="github.com/ggebbie/GeoPythonPlot.jl",
     devbranch="main",
 )

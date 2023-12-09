@@ -315,7 +315,7 @@ weakdeps = ["StaticArrays"]
 deps = ["Random"]
 uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
 
-[[deps.GGplot]]
+[[deps.GeoPythonPlot]]
 deps = ["Conda", "CondaPkg", "DelimitedFiles", "GoogleDrive", "HTTP", "Pkg", "PythonCall", "PythonPlot", "Revise", "TMI"]
 path = ".."
 uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"

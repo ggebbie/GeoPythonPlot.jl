@@ -1,4 +1,4 @@
-module GGplot
+module GeoPythonPlot
 
 using PythonCall
 using PythonPlot
@@ -64,14 +64,14 @@ function plotbox(latbox, lonbox)
 
     #init GeoAxes
     fig = figure()
-    ax = fig.add_subplot(projection = GGplot.cartopy.crs.PlateCarree())
+    ax = fig.add_subplot(projection = GeoPythonPlot.cartopy.crs.PlateCarree())
 
     #plot rectangle
-    ax.add_patch(GGplot.mpl.patches.Rectangle(xy=lower_left,
+    ax.add_patch(GeoPythonPlot.mpl.patches.Rectangle(xy=lower_left,
                                  width=w, height=h,
                                  facecolor="blue",
                                  alpha=0.2,
-                                 transform=GGplot.cartopy.crs.PlateCarree()))
+                                 transform=GeoPythonPlot.cartopy.crs.PlateCarree()))
     #define extent of figure
     pad = 10 #how many deg lat and lon to show outside of bbox
     pad_add = [-pad, pad] #add this to latbox and lonbox

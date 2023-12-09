@@ -1,9 +1,9 @@
-# GGplot
+# GeoPythonPlot
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ggebbie.github.io/GGplot.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ggebbie.github.io/GGplot.jl/dev/)
-[![Build Status](https://github.com/ggebbie/GGplot.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ggebbie/GGplot.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/ggebbie/GGplot.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/ggebbie/GGplot.jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ggebbie.github.io/GeoPythonPlot.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ggebbie.github.io/GeoPythonPlot.jl/dev/)
+[![Build Status](https://github.com/ggebbie/GeoPythonPlot.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ggebbie/GeoPythonPlot.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/ggebbie/GeoPythonPlot.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/ggebbie/GeoPythonPlot.jl)
 
 # Description
 
@@ -11,7 +11,7 @@ G. Gebbie's plotting routines, not to be confused with `ggplot2`. These plotting
 
 # Requirements
 
-GGplot.jl uses matplotlib, cmocean, and cartopy. Direct the python environment to an existing system-wide version of python with these already installed:
+GeoPythonPlot.jl uses matplotlib, cmocean, and cartopy. Direct the python environment to an existing system-wide version of python with these already installed:
 `ENV["PYTHON"]="python/directory/on/your/machine"`
 
 Or use a Julia-specific python environment built from scratch following the directions from `deps/build.jl`. Or, at the Julia REPL, run:
@@ -54,7 +54,7 @@ Run the following Julia code
     ],
              )`
 
-`t("GGplot.jl")`
+`t("GeoPythonPlot.jl")`
 
 2. Make a new empty repository on GitHub.
 	
