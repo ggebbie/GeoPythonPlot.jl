@@ -17,7 +17,7 @@ TMI = "582500f6-28c8-4d8f-aabe-b197735ec1d4"
 
 [compat]
 Conda = "1"
-TMI = "0.1.35"
+TMI = "0.2.2"
 julia = "1.8,1.9"
 
 [extras]
