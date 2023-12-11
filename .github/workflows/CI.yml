@@ -54,6 +54,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using GGplot
-            DocMeta.setdocmeta!(GGplot, :DocTestSetup, :(using GGplot); recursive=true)
-            doctest(GGplot)'
+            using GeoPythonPlot
+            DocMeta.setdocmeta!(GeoPythonPlot, :DocTestSetup, :(using GeoPythonPlot); recursive=true)
+            doctest(GeoPythonPlot)'
