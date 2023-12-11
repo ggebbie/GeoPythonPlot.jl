@@ -36,7 +36,7 @@ lat = range(-90.0,90.0,length=Ny+1)
         depth = 1000.0
         label = "test field, depth = "*string(depth)*" m"
 
-        GeoPythonPlot.pygui(true) # to help plots appear on screen using Python GUI
+        #GeoPythonPlot.pygui(true) # to help plots appear on screen using Python GUI
         planviewplot(testfield, lon, lat, depth, cntrs, titlelabel=label)
 
         # next see the continents
