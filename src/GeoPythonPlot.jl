@@ -155,12 +155,11 @@ end
 
     formerly planviewplotcartopy
 """
-function planviewplot(c::Field{<:Real}, depth, lims;titlelabel="planview plot",fname="fname.png",cenlon=-160.0) #where T <: Real
+function planviewplot(cplan::Matrix{<:Real}, lon, lat, depth, lims;titlelabel="planview plot",fname="fname.png",cenlon=-160.0,units=:none) #where T <: Real
 
     cmap_seismic = get_cmap("seismic")
     #cmap_hot = get_cmap("hot_r")
     cmap_hot = get_cmap("inferno_r")
-    cplan = planview(c,depth)
 
     fig = figure(202)
     clf()
@@ -184,12 +183,11 @@ function planviewplot(c::Field{<:Real}, depth, lims;titlelabel="planview plot",f
     gl.top_labels = false
     gl.right_labels = false
 
-    test = ax.contourf(c.γ.lon,c.γ.lat, cplan', lims, cmap=cmap_hot, transform = proj0)
-    colorbar(test,label=c.units,orientation="vertical",ticks=lims, fraction = 0.03)
-    CS = ax.contour(c.γ.lon,c.γ.lat, cplan', lims, colors="k", transform = proj0)
+    test = ax.contourf(lon, lat, cplan', lims, cmap=cmap_hot, transform = proj0)
+    colorbar(test,label=units,orientation="vertical",ticks=lims, fraction = 0.03)
+    CS = ax.contour(lon, lat, cplan', lims, colors="k", transform = proj0)
     ax.clabel(CS, CS.levels, inline=true, fontsize=10)
     savefig(fname)
-
 end
 
 # """
