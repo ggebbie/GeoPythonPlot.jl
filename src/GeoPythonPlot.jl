@@ -96,14 +96,16 @@ Plot of meridional section (lat-depth) in ocean
 function sectionplot(Psection::Matrix, lon, lat, depth, lims;titlelabel="section plot",fname="figure.png",units=:none) 
 
     cmap_seismic = get_cmap("seismic")
+    cmap_hot = get_cmap("inferno_r")
     z = depth/1000.0
     
     #calc fignum - based on current number of figures
     figure()
     contourf(lat, z, transpose(Psection), lims, cmap=cmap_seismic)
+    #contourf(lat, z, transpose(Psection), lims, cmap=cmap_hot)
     #fig, ax = plt.subplots()
     CS = gca().contour(lat, z, transpose(Psection), lims,colors="k")
-    gca().clabel(CS, CS.levels, inline=true, fontsize=10)
+    gca().clabel(CS, CS.levels, inline=true, fontsize=8)
     xlabel("Latitude [°N]")
     ylabel("Depth [km]")
     gca().set_title(titlelabel)
@@ -153,10 +155,11 @@ function planviewplot(cplan::Matrix{<:Real}, lon, lat, depth, lims;titlelabel="p
     gl.top_labels = false
     gl.right_labels = false
 
-    test = ax.contourf(lon, lat, cplan', lims, cmap=cmap_hot, transform = proj0)
+    #test = ax.contourf(lon, lat, cplan', lims, cmap=cmap_hot, transform = proj0)
+    test = ax.contourf(lon, lat, cplan', lims, cmap=cmap_seismic, transform = proj0)
     colorbar(test,label=units,orientation="vertical",ticks=lims, fraction = 0.03)
     CS = ax.contour(lon, lat, cplan', lims, colors="k", transform = proj0)
-    ax.clabel(CS, CS.levels, inline=true, fontsize=10)
+    ax.clabel(CS, CS.levels, inline=true, fontsize=8)
     savefig(fname)
 end
 

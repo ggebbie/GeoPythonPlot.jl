@@ -8,10 +8,9 @@ pyversion = GeoPythonPlot.pyconvert(String, GeoPythonPlot.pyimport("sys").versio
 
     # Write your tests here.
     @testset "box" begin
-        # will this plot run?
-        #GeoPythonPlot.pygui(true) # to see the plot
+        GeoPythonPlot.pygui(true) # to see the plot (in Jupyter?)
         latbox = [50,60]; lonbox = [30,40]
-        plotbox(latbox,lonbox)
+        plotbox(latbox,lonbox) # add display() to see plot over connection
     end
 
     @testset "planview" begin
@@ -25,7 +24,7 @@ pyversion = GeoPythonPlot.pyconvert(String, GeoPythonPlot.pyimport("sys").versio
         depth = 1000.0
         label = "test field, depth = "*string(depth)*" m"
 
-        #GeoPythonPlot.pygui(true) # to help plots appear on screen using Python GUI
+        GeoPythonPlot.pygui(true) # to help plots appear on screen using Python GUI
         planviewplot(testfield, lon, lat, depth, cntrs, titlelabel=label)
 
         # next see the continents
