@@ -1,4 +1,4 @@
 [deps]
-cartopy = "==0.25.0"
+cartopy = "==0.23.0"
 matplotlib = "==3.10.8"
 cmocean = "==4.0.3"
