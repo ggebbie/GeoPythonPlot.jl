@@ -1,3 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 GeoPythonPlot = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
+
+[sources]
+GeoPythonPlot = {path = ".."}
