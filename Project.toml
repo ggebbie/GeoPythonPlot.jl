@@ -1,7 +1,7 @@
 name = "GeoPythonPlot"
 uuid = "1e05a8e1-7dec-4f9e-9d3d-7df52321841b"
+version = "0.1.6"
 authors = ["G Jake Gebbie <ggebbie@whoi.edu>"]
-version = "0.1.5"
 
 [deps]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
@@ -11,7 +11,10 @@ PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
 PythonPlot = "274fc56d-3b97-40fa-a1cd-1b4a50311bf9"
 
 [compat]
-Conda = "1"
+Conda = "1.10.3"
+CondaPkg = "0.2.33"
+PythonCall = "0.9.30"
+PythonPlot = "1.0.6"
 julia = "1.9,1.10,1.11"
 
 [extras]
